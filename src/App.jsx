@@ -4,7 +4,10 @@
 // import "./App.css";
 // import GsapAnimationByClick from "./component/GsapAnimationByClick";
 // import GsapContextSafe from "./component/GsapContextSafe";
-import GsapClickAnimation from "./component/GsapClickAnimation";
+// import GsapClickAnimation from "./component/GsapClickAnimation";
+
+import ScrollBox from "./component/ScrollBox";
+
 
 
 
@@ -77,10 +80,10 @@ function App() {
       </div> */}
 
     
-        <GsapClickAnimation></GsapClickAnimation>
+        {/* <GsapClickAnimation></GsapClickAnimation> */}
 
 
-
+        <ScrollBox></ScrollBox>
 
     </>
   );
