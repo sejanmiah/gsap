@@ -34,7 +34,6 @@ const ServiceSection = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           toggleActions:"restart none none none",
-          markers:true,
         },
       });
     }

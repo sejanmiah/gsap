@@ -13,21 +13,22 @@ const ScrollBox = () => {
 
   useGSAP(
     () => {
-      gsap.to(boxRef.current, {
-        y: -200,
+      gsap.fromTo(boxRef.current, {
+        scale: 0,
+      },
+        {
         duration: 0.5,
-        opacity: 0.3,
-        scale: 1,
-        scaleX: 200,
+        scale: -20,
         ease: "circ.inOut",
         scrollTrigger: {
           trigger: boxRef.current,
-          start: "top 80%",
-          end: "bottom 30%",
+          toggleActions:"restart none none none",
+          scrub: true,
         },
-      });
-      gsap.fromTo(textRef.current, 
-        { y: 0, opacity: 0 },   // Initial state
+      },[{scope: '.containerOverflow'}]);
+      gsap.fromTo(textRef.current, { 
+        y: 0, 
+      },   // Initial state
         { 
           y: -20, 
           duration: 0.5, 
@@ -51,11 +52,11 @@ const ScrollBox = () => {
 
       <div
         ref={containerRef}
-        className="h-screen w-full bg-gray-300 flex justify-center items-center"
+        className="h-screen overflow-hidden containerOverflow w-full flex justify-center items-center"
       >
         <div
           ref={boxRef}
-          className="opacity-0 w-40 h-40 bg-blue-800 rounded-lg"
+          className="w-40 overflow-hidden h-40 bg-blue-800 rounded-lg"
         ></div>
       </div>
       {/* Service Section */}
